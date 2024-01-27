@@ -5,26 +5,27 @@ import ExpressionList from "./ExpressionList";
 const ExpressionEngine = () => {
   const [expressions, setExpressions] = useState([
     {
-      key: "",
+      ruleType: "age",
       output: {
         value: 60,
         operator: ">=",
         score: 50,
       },
 
-      combinator: "AND",
+      combinator: "and",
     },
   ]);
-//   const [combinator, setCombinator] = useState("and"); // default combinator
-
-  //   console.log(JSON.stringify(expressions));
+  //   const [combinator, setCombinator] = useState("and"); // default combinator
 
   localStorage.setItem("expression", JSON.stringify(expressions));
-  console.log(expressions);
+  //   console.log(JSON.stringify(expressions));
 
+  console.log(expressions);
+  
   const addExpression = (expression) => {
-    console.log(expression);
+    // console.log(expression);
     setExpressions([...expressions, expression]);
+
   };
   const deleteExpression = (index) => {
     const newExpressions = [...expressions];
